@@ -1,0 +1,145 @@
+<!-- <h5>Basic</h5>
+<p-slideMenu [model]="items" [viewportHeight]="250"></p-slideMenu>
+
+<h5>Popup</h5>
+<button #btn type="button" pButton icon="pi pi-bars" label="Show" (click)="menu.toggle($event)"></button>
+<p-slideMenu #menu [model]="items" [popup]="true" [viewportHeight]="250"></p-slideMenu>
+
+ -->
+
+<mui-org-chart
+  [topEmployee]="topEmployee"
+  direction="vertical"
+  (itemClick)="isClicked($event)"
+  data-bs-toggle="modal"
+  data-bs-target="#staticBackdrop"
+></mui-org-chart>
+
+<div
+  *ngIf="!isEmail"
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+       <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+       <button
+         type="button"
+         class="btn-close"
+         data-bs-dismiss="modal"
+         aria-label="Close"
+       ></button>
+     </div> -->
+      <div class="modal-body">
+        <div class="form-check">
+          <input
+            [(ngModel)]="radioVal.value"
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            value="email"
+            id="flexRadioDefault1"
+          />
+          <label class="form-check-label" for="flexRadioDefault1">
+            Email
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            [(ngModel)]="radioVal.value"
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            value="sms"
+            id="flexRadioDefault2"
+            checked
+          />
+          <label class="form-check-label" for="flexRadioDefault2"> SMS </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="whichRadioClicked(radioVal.value)"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="isEmail"
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- <form>
+         <div class="mb-3">
+           <label for="recipient-name" class="col-form-label">Email:</label>
+           <input
+             #email
+             type="text"
+             class="form-control"
+             id="recipient-name"
+           />
+         </div>
+         <div class="mb-3">
+           <label for="message-text" class="col-form-label">Message:</label>
+           <textarea
+             #message
+             class="form-control"
+             id="message-text"
+           ></textarea>
+         </div>
+       </form> -->
+        <p-slideMenu
+          id="myModal"
+          [model]="items"
+          [viewportHeight]="250"
+          (click)="tabCalled($event)"
+        ></p-slideMenu>
+      </div>
+      <!-- <div class="modal-footer">
+       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+         Close
+       </button>
+       <button
+         type="button"
+         class="btn btn-primary"
+         data-bs-dismiss="modal"
+         (click)="sendEmail(email.value, message.value)"
+       >
+         OK
+       </button>
+     </div> -->
+    </div>
+  </div>
+</div>
