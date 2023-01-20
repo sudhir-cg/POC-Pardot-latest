@@ -22,9 +22,9 @@ export class AppComponent {
 
   topEmployee: any = {
     id: 1,
-    name: '+',
+    name: '',
     imageUrl:
-      'https://images.pexels.com/photos/13973602/pexels-photo-13973602.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+      'https://icons.iconarchive.com/icons/icojam/blue-bits/32/math-add-icon.png',
     subordinates: [
       // {
       //   // name: 'East Coast Group',
@@ -72,6 +72,7 @@ export class AppComponent {
       {
         id: 2,
         name: 'email',
+        imageUrl: 'https://icons.iconarchive.com/icons/icojam/blue-bits/32/math-add-icon.png',
         subordinates: [],
       },
     ];
@@ -99,7 +100,7 @@ export class AppComponent {
       id: this.recentNodeClicked.id + 1,
       name: 'End Node',
       imageUrl:
-        'https://media.istockphoto.com/id/1302642699/vector/abstract-red-vector-background-with-stripes-can-be-used-for-cover-design-poster-and.jpg?s=612x612&w=0&k=20&c=3cQPZx57nAV0f1evtuRk9p2EgmAVGb_A063Htb2_Gtw=',
+        'https://icons.iconarchive.com/icons/dakirby309/windows-8-metro/32/Other-Power-Shut-Down-Metro-icon.png',
       subordinates: [],
     };
     this.recentNodeClicked.subordinates.push(endNode);
@@ -114,12 +115,14 @@ export class AppComponent {
       name: 'Group One',
       imageUrl:
         'https://icons.iconarchive.com/icons/graphicloads/100-flat-2/32/email-icon.png',
+        subordinates: [],
     };
     let node2 = {
       id: node1.id + 1,
       name: 'Group Two',
       imageUrl:
         'https://icons.iconarchive.com/icons/graphicloads/100-flat-2/32/email-icon.png',
+        subordinates: [],
     };
     this.recentNodeClicked.subordinates.push(node1);
     this.recentNodeClicked.subordinates.push(node2);
